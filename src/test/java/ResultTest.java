@@ -1,9 +1,12 @@
 import org.junit.jupiter.api.*;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+//  https://github.com/StanislavPidik/prog2-ss21-exercise1.git
 
 public class ResultTest {
 
@@ -84,6 +87,7 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+
     @Test
     @DisplayName("test 7 - grade is 0")
     void gradeIs0() {
@@ -96,6 +100,7 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+
     @Test
     @DisplayName("test 8 - grade is negativ number")
     void gradeIsNegativ() {
@@ -108,6 +113,7 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+
     @Test
     @DisplayName("test 9 - grade is greater then 100")
     void gradeIsMore100() {
@@ -120,6 +126,7 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+
     @Test
     @DisplayName("test 10 - correct student count grade count")
     void testCorrectStudentVsGarage() {
@@ -145,6 +152,7 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+
     @Test
     @DisplayName("test 12 - incorrect student count vs grade count")
     void testIncorrectStudentVsGarageNegative() {
@@ -157,18 +165,20 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+
     @Test
     @DisplayName("test 13 - student count to high")
     void testStudentCountToHigh() {
 
-        List<Integer> list1 = Arrays.asList(62, 49,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
-        List<Integer> expected = Arrays.asList(62, 49,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1); //list wil be returned without change
+        List<Integer> list1 = Arrays.asList(62, 49, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+        List<Integer> expected = Arrays.asList(62, 49, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1); //list wil be returned without change
         List<Integer> actual = Result.gradingStudents(list1);
 
         assertTrue(expected.size() == actual.size()
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+
     @Test
     @DisplayName("test 14 - empty list")
     void emptyList() {
@@ -181,15 +191,16 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+
     @Test
     @DisplayName("test 15 - null list")
     void nullList() {
 
-        List<Integer> list1 =null;
+        List<Integer> list1 = null;
         List<Integer> expected = null;
         List<Integer> actual = Result.gradingStudents(list1);
 
-        assertTrue(actual==null);
+        assertTrue(actual == null);
     }
 
 

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+//  https://github.com/StanislavPidik/prog2-ss21-exercise1.git
 
 public class Result {
 
@@ -45,14 +46,12 @@ public class Result {
                     System.out.println("Wrong grade(s) inside the list - grade list wil be returned without change!");
                     return grades;
                 }
-
                 gradesToReturn.add(grade);
             }
         } else {
             System.out.println("Wrong student count - grade list wil be returned without change!");
             return grades;
         }
-
         return gradesToReturn;
     }
 
