@@ -15,7 +15,11 @@ public class Result {
 
         List<Integer> gradesToReturn = new ArrayList<>();
 
-        if (grades.get(0) == (grades.size() - 1) && grades.get(0) >= MINIMAL_GRADE_COUNT && grades.get(0) <= MAXIMAL_GRADE_COUNT) {
+        if (grades == null || grades.isEmpty()) {
+            System.out.println("List is empty of null - grade list wil be returned without change!");
+            return grades;
+
+        } else if (grades.get(0) == (grades.size() - 1) && grades.get(0) >= MINIMAL_GRADE_COUNT && grades.get(0) <= MAXIMAL_GRADE_COUNT) {
             for (int i = 1; i < grades.size(); i++) {
 
 
