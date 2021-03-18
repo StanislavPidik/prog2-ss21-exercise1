@@ -120,6 +120,55 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+    @Test
+    @DisplayName("test 10 - correct student count grade count")
+    void testCorrectStudentVsGarage() {
+
+        List<Integer> list1 = Arrays.asList(1, 37);
+        List<Integer> expected = Arrays.asList(37);
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(expected.size() == actual.size()
+                && expected.containsAll(actual)
+                && actual.containsAll(expected));
+    }
+
+    @Test
+    @DisplayName("test 11 - incorrect student count vs grade count")
+    void testIncorrectStudentVsGarage() {
+
+        List<Integer> list1 = Arrays.asList(2, 37);
+        List<Integer> expected = Arrays.asList(2, 37); //list wil be returned without change
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(expected.size() == actual.size()
+                && expected.containsAll(actual)
+                && actual.containsAll(expected));
+    }
+    @Test
+    @DisplayName("test 12 - incorrect student count vs grade count")
+    void testIncorrectStudentVsGarageNegative() {
+
+        List<Integer> list1 = Arrays.asList(-2, 37);
+        List<Integer> expected = Arrays.asList(-2, 37); //list wil be returned without change
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(expected.size() == actual.size()
+                && expected.containsAll(actual)
+                && actual.containsAll(expected));
+    }
+    @Test
+    @DisplayName("test 13 - student count to high")
+    void testStudentCountToHigh() {
+
+        List<Integer> list1 = Arrays.asList(62, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+        List<Integer> expected = Arrays.asList(62, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1); //list wil be returned without change
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(expected.size() == actual.size()
+                && expected.containsAll(actual)
+                && actual.containsAll(expected));
+    }
 
 
 }
