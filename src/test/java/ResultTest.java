@@ -161,13 +161,35 @@ public class ResultTest {
     @DisplayName("test 13 - student count to high")
     void testStudentCountToHigh() {
 
-        List<Integer> list1 = Arrays.asList(62, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
-        List<Integer> expected = Arrays.asList(62, 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1); //list wil be returned without change
+        List<Integer> list1 = Arrays.asList(62, 49,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+        List<Integer> expected = Arrays.asList(62, 49,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1); //list wil be returned without change
         List<Integer> actual = Result.gradingStudents(list1);
 
         assertTrue(expected.size() == actual.size()
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
+    }
+    @Test
+    @DisplayName("test 14 - empty list")
+    void emptyList() {
+
+        List<Integer> list1 = Arrays.asList();
+        List<Integer> expected = Arrays.asList();
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(expected.size() == actual.size()
+                && expected.containsAll(actual)
+                && actual.containsAll(expected));
+    }
+    @Test
+    @DisplayName("test 15 - null list")
+    void nullList() {
+
+        List<Integer> list1 =null;
+        List<Integer> expected = null;
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(actual==null);
     }
 
 
