@@ -84,7 +84,42 @@ public class ResultTest {
                 && expected.containsAll(actual)
                 && actual.containsAll(expected));
     }
+    @Test
+    @DisplayName("test 7 - grade is 0")
+    void gradeIs0() {
 
+        List<Integer> list1 = Arrays.asList(2, 37, 0);
+        List<Integer> expected = Arrays.asList(37, 0);
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(expected.size() == actual.size()
+                && expected.containsAll(actual)
+                && actual.containsAll(expected));
+    }
+    @Test
+    @DisplayName("test 8 - grade is negativ number")
+    void gradeIsNegativ() {
+
+        List<Integer> list1 = Arrays.asList(2, 37, -3);
+        List<Integer> expected = Arrays.asList(2, 37, -3); //list wil be returned without change
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(expected.size() == actual.size()
+                && expected.containsAll(actual)
+                && actual.containsAll(expected));
+    }
+    @Test
+    @DisplayName("test 9 - grade is greater then 100")
+    void gradeIsMore100() {
+
+        List<Integer> list1 = Arrays.asList(2, 37, 102);
+        List<Integer> expected = Arrays.asList(2, 37, 102); //list wil be returned without change
+        List<Integer> actual = Result.gradingStudents(list1);
+
+        assertTrue(expected.size() == actual.size()
+                && expected.containsAll(actual)
+                && actual.containsAll(expected));
+    }
 
 
 }
